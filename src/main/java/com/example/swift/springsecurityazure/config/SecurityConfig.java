@@ -27,7 +27,8 @@ public class SecurityConfig {
                 })
                 .oauth2Login(oauth2Login -> oauth2Login
                         .loginProcessingUrl("/login/oauth2/code/*") // Add this line
-                        .defaultSuccessUrl("http://127.0.0.1:5500", true)
+//                        .defaultSuccessUrl("http://127.0.0.1:5500", true)
+//                        .defaultSuccessUrl("http://127.0.0.1:5500", true)
                         .successHandler(new CustomAuthenticationSuccessHandler())) // Use the custom success handler
                 .logout(logout -> logout
                         .logoutSuccessHandler((request, response, authentication) -> {
@@ -46,7 +47,7 @@ public class SecurityConfig {
                 .cors(cors -> cors
                         .configurationSource(request -> {
                             var corsConfiguration = new org.springframework.web.cors.CorsConfiguration();
-                            corsConfiguration.setAllowedOrigins(List.of("http://127.0.0.1:5500"));
+                            corsConfiguration.setAllowedOrigins(List.of("https://lemon-desert-0097cd103.3.azurestaticapps.net"));
                             corsConfiguration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"));
                             corsConfiguration.setAllowCredentials(true);
                             corsConfiguration.setExposedHeaders(List.of("Set-Cookie"));

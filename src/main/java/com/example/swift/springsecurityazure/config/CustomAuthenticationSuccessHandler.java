@@ -13,7 +13,7 @@ public class CustomAuthenticationSuccessHandler extends SavedRequestAwareAuthent
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
                                         Authentication authentication) throws ServletException, IOException {
         response.setContentType("text/html");
-        response.getWriter().println("<html><head><script>window.opener.location.href = 'http://127.0.0.1:5500/'; window.close();</script></head></html>");
+        response.getWriter().println("<html><head><script>window.opener.location.href = 'https://lemon-desert-0097cd103.3.azurestaticapps.net/'; window.close();</script></head></html>");
         response.getWriter().flush();
     }
 }
